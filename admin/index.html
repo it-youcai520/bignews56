@@ -81,9 +81,9 @@
             url:'http://localhost:8080/api/v1/admin/user/info',
             dataType:"json",
             //headers
-            headers:{
-                Authorization:localStorage.getItem('token')
-            },
+            // headers:{
+            //     Authorization:localStorage.getItem('token')
+            // },
             success:function(backData){
                 console.log(backData);
               if(backData.code==200){
@@ -93,7 +93,8 @@
               }
             }
            })
-
+          
+         
         })
     </script>
 </body>
