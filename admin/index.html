@@ -54,7 +54,8 @@
 
         </div>
     </div>
-
+   
+    <script src="./libs/http.js"></script>
     <script>
         
         $(function(){
@@ -78,8 +79,9 @@
 
            $.ajax({
             type:'get',
-            url:'http://localhost:8080/api/v1/admin/user/info',
-            dataType:"json",
+           /*  url:'http://localhost:8080/api/v1/admin/user/info', */
+           url:BigNew.user_info,
+           dataType:"json",
             //headers
             // headers:{
             //     Authorization:localStorage.getItem('token')
@@ -100,7 +102,7 @@
              if(confirm('你确定要退出吗?')){
                  //删除本地保存的token
                  localStorage.removeItem('token');
-                 window.Location.href='./login.html';
+                 window.location.href='./login.html';
              }
          })
         })
