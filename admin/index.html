@@ -107,7 +107,7 @@
                 console.log(backData);
               if(backData.code==200){
                   $('.user_info>img').attr('src',backData.data.userPic);
-                  $('.user_info>span>i').text(backData.nickname);
+                  $('.user_info>span>i').text(backData.data.nickname);
                   $('.user_center_link>img').attr('src',backData.data.userPic);
               }
             }
@@ -121,6 +121,20 @@
                  localStorage.removeItem('token');
                  window.location.href='./login.html';
              }
+         })
+        
+         //左侧一级菜单导航栏
+         $('.level01').on('click',function(){
+             $(this).addClass('active').siblings('div').removeClass('active');
+            if($(this).next().hasClass('level02')){
+                 $(this).next().slideToggle();
+                 $(this).find('b').toggleClass('rotate0');
+                 $('ul.level02 li a').first()[0].click();
+             }
+         })
+         //左侧二级菜单设置点击事件
+         $('ul.level02 li').on('click',function(){
+           $(this).addClass('active').siblings().removeClass('active');
          })
         })
     </script>
